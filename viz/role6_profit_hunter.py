@@ -9,7 +9,9 @@ import os
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
 
-FILE_PATH = os.path.join(project_root, 'cleaned_superstore.csv') # <-- Adjusted path accordingly
+# The data file is located one level above the project root
+data_file_dir = os.path.dirname(project_root)
+FILE_PATH = os.path.join(data_file_dir, 'cleaned_superstore.csv') # <-- Corrected filename and path
 IMAGE_DIR = os.path.join(project_root, 'images')
 # --- End of path construction ---
 
