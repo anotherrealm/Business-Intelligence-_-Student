@@ -42,10 +42,11 @@ sns.lineplot(data=monthly_trends, x='Order_Month_Start', y='Total_Profit', label
 # Zero line for profit/loss reference
 plt.axhline(0, color='gray', linestyle='--', linewidth=0.8)
 
-# Format the X-axis for better readability
-date_form = DateFormatter("%b %Y")
-plt.gca().xaxis.set_major_formatter(date_form)
+# Format the X-axis with monthly ticks and better date formatting
+plt.gca().xaxis.set_major_locator(plt.MaxNLocator(10))  # Limit to 10 major ticks
+plt.gca().xaxis.set_major_formatter(DateFormatter('%b %Y'))
 plt.xticks(rotation=45, ha='right')
+plt.gcf().autofmt_xdate()  # Auto-format the x-axis labels for better fit
 
 plt.title('Chart 1: Monthly Sales and Profit Trend Analysis (Identifying Seasonality)', fontsize=14)
 plt.xlabel('Order Month', fontsize=12)
