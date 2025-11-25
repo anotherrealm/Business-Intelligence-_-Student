@@ -5,13 +5,12 @@ import os
 
 
 # --- Dynamically construct paths ---
-# This makes the script runnable from any directory
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
 
 # The data file is located one level above the project root
 data_file_dir = os.path.dirname(project_root)
-FILE_PATH = os.path.join(data_file_dir, 'cleaned_superstore.csv') # <-- Corrected filename and path
+FILE_PATH = os.path.join(data_file_dir, 'cleaned_superstore.csv')
 IMAGE_DIR = os.path.join(project_root, 'images')
 # --- End of path construction ---
 
@@ -29,9 +28,7 @@ plt.rcParams['figure.dpi'] = 100
 plt.rcParams['figure.figsize'] = (10, 6)
 print("Role 6: Profit Hunter script loaded successfully.")
 
-# ------------------------------------------------------
 # --- CHART 5: Discount Impact on Profitability ---
-# ------------------------------------------------------
 
 plt.figure(figsize=(10, 6))
 
@@ -64,9 +61,7 @@ plt.close()
 
 print(f"-> Chart 5 saved: {chart5_path}")
 
-# ------------------------------------------------------
 # --- CHART 6: Top 15 States with the Largest Loss ---
-# ------------------------------------------------------
 
 state_profit = (
     df.groupby('State')['Profit']
